@@ -21,6 +21,7 @@ author: Bhavay Goyal
 
 navbar-links:
   About Me: "aboutme"
+  Exposition: "exposition"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
