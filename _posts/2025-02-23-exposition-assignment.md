@@ -5,7 +5,7 @@ subtitle: Topic name here
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
-tags: [test]
+tags: [assignment]
 author: Bhavay Goyal, Heer Ahir, Ritika
 ---
 
