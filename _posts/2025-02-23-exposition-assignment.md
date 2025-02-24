@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mastering sed:
+title: Mastering sed
 subtitle: The Stream Editor for Efficient Text Processing
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
