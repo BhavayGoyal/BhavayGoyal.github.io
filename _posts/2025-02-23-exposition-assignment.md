@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mastering sed
+title: Mastering SED
 subtitle: The Stream Editor for Efficient Text Processing
 cover-img: /assets/img/bg.webp
 thumbnail-img: /assets/img/thumb.png
