@@ -116,7 +116,7 @@ I have a cat and a black cat.
 ```
 #### Output:
 ```bash
-I have a dog and a black dog.
+I have a dog and a black cat.
 ```
 ### 2. Conditional Substitution
 
