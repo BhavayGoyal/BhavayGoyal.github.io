@@ -2,7 +2,7 @@
 layout: post
 title: Mastering sed
 subtitle: The Stream Editor for Efficient Text Processing
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/bg.webp
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 tags: [assignment]
@@ -339,6 +339,7 @@ error: access denied
 ```
 Explanation: The `-i.bak` option edits the file in place and creates a backup with the `.bak` extension before making changes.
 
+---
 ## Use Cases
 
 - **Configuration Management** – Automate updates to configuration files.  
