@@ -2,9 +2,9 @@
 layout: post
 title: Mastering SED
 subtitle: The Stream Editor for Efficient Text Processing
-cover-img: /assets/img/bgimage.png
+cover-img: /assets/img/bg.png
 thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/bgimage.png
+share-img: /assets/img/bg.png
 tags: [assignment]
 author: Bhavay Goyal, Heer Ahir, Ritika
 ---
