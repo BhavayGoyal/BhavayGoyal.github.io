@@ -4,7 +4,7 @@ title: Mastering sed
 subtitle: The Stream Editor for Efficient Text Processing
 cover-img: /assets/img/bg.webp
 thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/bg.webp
 tags: [assignment]
 author: Bhavay Goyal, Heer Ahir, Ritika
 ---
