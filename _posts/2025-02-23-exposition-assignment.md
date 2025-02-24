@@ -93,8 +93,9 @@ For example, replacing text and saving the output to `output.txt`:
 sed 's/old/new/g' filename > output.txt
 ```
 
-## Key Features & Explanation
+---
 
+## Key Features & Explanation
 ### 1. Text Substitution
 
 #### Syntax:
@@ -117,7 +118,33 @@ I have a cat and a black cat.
 ```bash
 I have a dog and a black dog.
 ```
-### 2. Deleting Lines
+### 2. Conditional Substitution
+
+#### Syntax:
+```bash
+sed '/pattern/ s/old/new/' filename # Here pattern refers to Regular expression (RegEx)
+```
+
+#### Example:
+Example: Replace "cat" with "dog" only in lines containing "pet" in animals.txt.
+
+```bash
+sed '/pet/ s/cat/dog/' animals.txt
+```
+#### Input (animals.txt):
+```bash
+I have a cat.
+My pet is a cat.
+Cats are independent.
+```
+#### Output:
+```bash
+I have a cat.
+My pet is a dog.
+Cats are independent.
+```
+Explanation: The substitution `s/cat/dog/` is applied only to lines matching the pattern "pet".
+### 3. Deleting Lines
 
 #### Syntax:
 ```bash
@@ -145,7 +172,7 @@ Line 1: Success
 Line 2: Warning
 Line 4: Success
 ```
-### 3. Inserting and Appending Lines
+### 4. Inserting and Appending Lines
 
 #### Syntax:
 ```bash
@@ -174,7 +201,7 @@ This is a new inserted line
 Line 3
 Line 4
 ```
-### 4. Replacing Text in a Specific Line
+### 5. Replacing Text in a Specific Line
 
 #### Syntax:
 ```bash
@@ -199,7 +226,7 @@ Apple is red.
 I love orange juice.
 Apples are tasty.
 ```
-### 5. Case-Insensitive Substitution
+### 6. Case-Insensitive Substitution
 
 #### Syntax:
 ```bash
@@ -220,7 +247,7 @@ hello there!
 Hi world!
 Hi there!
 ```
-### 6. Printing Specific Lines
+### 7. Printing Specific Lines
 
 #### Syntax:
 ```bash
@@ -246,7 +273,7 @@ Line 2
 Line 3
 Line 4
 ```
-### 7. Replacing Multiple Patterns
+### 8. Replacing Multiple Patterns
 
 #### Syntax:
 ```bash
@@ -265,7 +292,7 @@ I like red and green colors.
 ```bash
 I like blue and yellow colors.
 ```
-### 8. Removing Extra Spaces
+### 9. Removing Extra Spaces
 
 #### Syntax:
 ```bash
@@ -284,6 +311,33 @@ This    is   a   test   file.
 ```bash
 This is a test file.
 ```
+### 10. Performing In-Place Edits with Backup
+
+#### Syntax:
+```bash
+sed -i.bak 's/pattern/replacement/' filename
+```
+#### Example:
+Replace the first occurrence of "error" with "warning" in each line of log.txt, creating a backup named log.txt.bak.
+```bash
+sed -i.bak 's/error/warning/' log.txt
+```
+#### Input (log.txt):
+```bash
+error: file not found
+error: access denied
+```
+#### Output (log.txt):
+```bash
+warning: file not found
+warning: access denied
+```
+#### Backup (log.txt.bak):
+```bash
+error: file not found
+error: access denied
+```
+Explanation: The `-i.bak` option edits the file in place and creates a backup with the `.bak` extension before making changes.
 
 ## Use Cases
 
@@ -293,97 +347,12 @@ This is a test file.
 - **Code Refactoring** – Modify source code files in bulk.  
 - **Batch Text Processing** – Efficiently manipulate large text files.  
 
-<!-- ## Key Features & Explanation
-`sed` works by processing input line by line and applying transformations based on the provided commands.
-
-### 1. Substituting Text
-#### Syntax:
-```sh
-sed 's/old-text/new-text/' filename
-```
-#### Example:
-```sh
-sed 's/Linux/Ubuntu/' example.txt
-```
-This replaces the first occurrence of "Linux" with "Ubuntu" in each line.
-
-To replace all occurrences in a line, use the `g` flag:
-```sh
-sed 's/Linux/Ubuntu/g' example.txt
-```
-
-### 2. Deleting Lines
-#### Syntax to delete the Nth line:
-```sh
-sed 'Nd' filename  # Deletes the N-th line
-```
-#### Example:
-```sh
-sed '3d' example.txt  # Deletes the 3rd line
-```
-#### Syntax to delete all lines containing a specific pattern (Regular expression (RegEx)):
-```sh
-sed '/pattern/d' filename
-```
-#### Example:
-```sh
-sed '/[Ee][Rr][Rr][Oo][Rr]/d' logfile.txt # Deletes lines containing "ERROR" that is case insenstive
-```
-
-### 3. Inserting and Appending Lines
-#### Insert before a line:
-```sh
-sed '3i\New line inserted' example.txt
-```
-
-#### Append after a line:
-```sh
-sed '3a\New line appended' example.txt
-```
-
-### 4. Extracting Specific Lines
-To print only specific lines, use:
-```sh
-sed -n '2,4p' example.txt  # Prints lines 2 to 4
-```
-Syntax to print lines matching a pattern (Regular Expression (RegEx)):
-```sh
-sed -n '/pattern/p' example.txt
-```
-
-### 5. Removing Extra Spaces
-```sh
-sed 's/  */ /g' example.txt  # Converts multiple spaces into a single space
-```
-
----
-
-## Advanced Data Cleaning with `sed`
-
-### 1. Remove Blank Lines
-```sh
-sed '/^$/d' example.txt
-```
-
-### 2. Convert Uppercase to Lowercase
-```sh
-sed 's/[A-Z]/\L&/g' example.txt
-```
-
-### 3. Add a Prefix or Suffix to Each Line
-#### Add Prefix:
-```sh
-sed 's/^/PREFIX: /' example.txt
-```
-#### Add Suffix:
-```sh
-sed 's/$/ :SUFFIX/' example.txt
-```
-
 ---
 
 ## Conclusion
 `sed` is a powerful tool for text processing and data cleaning in Linux. With its substitution, deletion, insertion, and filtering capabilities, it becomes a crucial utility for anyone working with large text files or automation scripts.
 
-For further learning, check out the official documentation:
-[GNU Sed Manual](https://www.gnu.org/software/sed/manual/sed.html) -->
+## Further Readings
+- For further learning, check out the official documentation:
+[GNU Sed Manual](https://www.gnu.org/software/sed/manual/sed.html)
+- If you want to learn more about RegEx, do check this out [Regex Tutorial](https://www.geeksforgeeks.org/write-regular-expressions/)
